@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #05050f;
+    font-family: 'Arial', sans-serif;
+}
+ 
+#info {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 250px;
+    z-index: 100;
+}
+ 
+#info h2 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+ 
+.status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+ 
+.status.connected {
+    background: #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+}
+ 
+.status.disconnected {
+    background: #f44336;
+    box-shadow: 0 0 8px #f44336;
+}
+ 
+.count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #667eea;
+    margin: 10px 0 2px;
+}
+ 
+/* NEW: System monitor */
+.sys-monitor {
+    margin-top: 12px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+ 
+.sys-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+ 
+.sys-label {
+    font-size: 11px;
+    font-family: monospace;
+    color: #555;
+    width: 28px;
+    flex-shrink: 0;
+}
+ 
+.bar-track {
+    flex: 1;
+    background: #e0e0e0;
+    border-radius: 3px;
+    height: 7px;
+    overflow: hidden;
+}
+ 
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #667eea, #00c8ff);
+    border-radius: 3px;
+    transition: width 0.8s ease;
+}
+ 
+.bar-fill.bar-gpu {
+    background: linear-gradient(90deg, #76b900, #b8ff57); /* NVIDIA green */
+}
+ 
+.sys-value {
+    font-size: 11px;
+    font-family: monospace;
+    color: #444;
+    width: 32px;
+    text-align: right;
+    flex-shrink: 0;
+}
+ 
+.feeding-divider {
+    margin: 12px 0 10px;
+    border-top: 1px solid #ddd;
+}
+ 
+#feeding-status-badge {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+ 
+#feeding-status-badge.status-ready {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+ 
+#feeding-status-badge.status-eating {
+    background: #fff3e0;
+    color: #e65100;
+    animation: pulse-badge 0.8s ease-in-out infinite alternate;
+}
+ 
+#feeding-status-badge.status-dead {
+    background: #fce4ec;
+    color: #b71c1c;
+}
+ 
+@keyframes pulse-badge {
+    from { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+ 
+#feeding-filename {
+    font-size: 10px;
+    font-family: monospace;
+    color: #555;
+    word-break: break-all;
+    margin-bottom: 8px;
+}
+ 
+#feeding-preview {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    border: 1px solid #ddd;
+}
+ 
+.dead-file-item {
+    font-size: 10px;
+    font-family: monospace;
+    color: #b71c1c;
+    word-break: break-all;
+    padding: 2px 0;
+    border-bottom: 1px solid #fce4ec;
+}
