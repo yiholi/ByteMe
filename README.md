@@ -2,7 +2,6 @@
 
 A digital organism that lives inside your computer. Its body is made of your folders, its behavior is driven by your CPU, RAM, and GPU, and it eats your JPG files.
 
-![Preview]
 
 ---
 
